@@ -13,9 +13,9 @@ This repository contains a comprehensive malware analysis of a suspected njRAT s
 ├── report/       # Project report and documentation
 ```
 
-📘 [**Data README**](data/README.md) – Explains all `.txt` and `.pcapng` evidence files used during analysis  
-🔧 [**Tools README**](tools/README.md) – Describes the custom Python script and its automation logic  
-📄 [**Report Summary **](report/README.md) – Shortened version of the final malware analysis writeup
+📘 [**Evidence Summary**](data/README.md) – Explains all `.txt` and `.pcapng` evidence files used during analysis  
+🔧 [**Tools Summary**](tools/README.md) – Describes the custom Python script and its automation logic  
+📄 [**Report Summary**](report/README.md) – Shortened version of the final malware analysis writeup
 
 ---
 
