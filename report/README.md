@@ -1,6 +1,6 @@
 # 📄  njRAT Malware Analysis
 
-This is a summarized academic report documenting the complete malware analysis process for a sample njRAT binary. The full version was submitted for the CSCE 451/652 Final Project and is not included in this public repository for academic integrity reasons.
+This is a summarized academic report documenting the complete malware analysis process for a sample njRAT binary.
 
 ---
 
