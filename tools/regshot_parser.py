@@ -3,9 +3,35 @@ import os
 from collections import Counter
 import tkinter as tk
 from tkinter import filedialog
-
+import webbrowser
 # === CONFIG ===
-KEYWORDS = ['Run', 'Startup', 'WindowsUpdate', 'UserAssist', 'Explorer', 'Auto Update', 'SessionInfo', 'Action Center']
+KEYWORDS = [
+    # Persistence-related
+    'Run', 'RunOnce', 'Startup', 'Start Menu', 'Shell Folders', 'StartupApproved',
+    'TaskCache', 'TaskScheduler', 'Winlogon', 'Userinit', 'Load', 'Logon', 'Policies\\Explorer',
+
+    # Network & Update
+    'WindowsUpdate', 'Auto Update', 'Internet Settings', 'ProxyServer', 'WinInet', 'Winsock', 'Tcpip', 'Dhcp',
+
+    # System Surveillance / TTPs
+    'UserAssist', 'Explorer', 'SessionInfo', 'Shell', 'Action Center', 'RecentDocs', 'TypedURLs', 'AppCompatFlags',
+    'MUICache', 'BackgroundActivityModerator', 'AppInit_DLLs',
+
+    # Misc and Malware-specific
+    'Services', 'App Paths', 'Debugger', 'Image File Execution Options', 'Command Processor',
+    'SystemCertificates', 'Active Setup', 'KnownDLLs', 'PowerShell', 'WMI', 'AutorunsDisabled',
+
+    # Monitoring Tools / Hijack Traces
+    'Security Center', 'FirewallPolicy', 'SystemRestore', 'SafeBoot', 'BITS',
+    'Software\\Classes\\exefile\\shell\\open\\command',
+
+    # C2 & Traffic Indicators
+    'ZoneMap', 'Internet Explorer', 'BrowserEmulation', 'FeatureControl',
+
+    # Misc heuristic indicators
+    'LoadBehavior', 'Enable', 'Disable', 'Hidden', 'NoDriveTypeAutoRun', 'NoAutoUpdate',
+]
+
 timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
 
 # === GUI FILE PICKER ===
@@ -46,8 +72,10 @@ with open(OUTPUT_TXT, "w", encoding="utf-8") as out:
 # === SAVE HTML OUTPUT ===
 def highlight_keywords(line):
     for k in KEYWORDS:
-        line = line.replace(k, f"<strong style='color:red'>{k}</strong>")
+        pattern = re.compile(re.escape(k), re.IGNORECASE)
+        line = pattern.sub(f"<strong style='color:red'>\\g<0></strong>", line)
     return line
+
 
 with open(OUTPUT_HTML, "w", encoding="utf-8") as html:
     html.write("<html><head><style>body { font-family: monospace; }</style></head><body>")
@@ -66,6 +94,7 @@ print(f" Filtered lines: {len(filtered_lines)}")
 print(f" Keywords matched: {sum(keyword_hits.values())}")
 print(f" Saved text file to: {OUTPUT_TXT}")
 print(f" Saved HTML report to: {OUTPUT_HTML}")
+webbrowser.open(OUTPUT_HTML)
 
 if not filtered_lines:
     print(" No registry lines matched the given keywords. Try expanding the keyword list.")
