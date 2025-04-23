@@ -72,6 +72,7 @@ python regshot_parser.py
 **📸 Screenshot**
 
 Below is an example of what the filtered output looks like:
+
 ![Filtered Output Preview](data/regshot_parser.png)
 
 
