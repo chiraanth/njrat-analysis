@@ -100,7 +100,8 @@ python regshot_parser.py
 
 Below is an example of what the filtered output looks like:
 
-![Filtered Output Preview](data/regshot_parser.png)
+![Filtered Output Screenshot](data/regshot_parser_v2.png)
+
 
 
 ---
