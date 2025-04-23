@@ -41,21 +41,61 @@ This repository contains a comprehensive malware analysis of a suspected njRAT s
   - Screenshots, decoded values, and conclusions.
 
 ---
+🛠️ \*\*Automation Tool Overview: \*\***`regshot_parser.py`**
 
-## 🚀 Usage Instructions
+This script simplifies registry diff analysis by automatically filtering `regshot.txt` output for malware-relevant indicators.
 
-1. **Clone the repo**
+**Key Features:**
+
+- Parses the raw Regshot diff output
+- Filters `Keys Added` and `Values Modified` based on specific keywords
+- Highlights entries related to persistence, user activity tracking, or system configuration changes
+- Outputs a clean and timestamped `.txt` file summarizing all matches
+- Tracks frequency of matched keywords
+
+**Keyword Matching:**
+Customizable inside the script by editing the `KEYWORDS` list. Defaults include:
+
+```
+['Run', 'Startup', 'UserAssist', 'WindowsUpdate', 'Action Center', 'Explorer', 'SessionInfo']
+```
+
+**How to Use:**
+
+```bash
+cd tools
+python regshot_parser.py
+```
+
+📄 Output will be saved as `filtered_regshot_<timestamp>.html` and `filtered_regshot_<timestamp>.txt`
+
+**📸 Screenshot **
+Below is an example of what the filtered output looks like:
+data/regshot_parser.png
+
+---
+
+🚀 **Usage Instructions**
+
+1. Clone the repo:
+
 ```bash
 git clone https://github.com/chiraanth/njrat-analysis.git
 cd njrat-analysis
 ```
 
-2. **Run the registry filter tool**
+2. Run the registry filter tool:
+
 ```bash
 cd tools
 python regshot_parser.py
 ```
-✅ Make sure `regshot.txt` is present in the `data/` folder. A filtered `.txt` summary will be generated.
+
+✅ **Important:**
+
+- The script will output a file named `filtered_regshot_<timestamp>.txt` in the same folder as the script.
+- Open it in any text editor to review filtered registry keys.
+- You can modify the list of keywords in the script by editing the `KEYWORDS` variable.
 
 ---
 
