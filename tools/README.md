@@ -33,9 +33,9 @@ python regshot_parser.py
 ---
 
 ## 📸 Screenshot Example
-```
+
 ![Filtered Output Preview](data/regshot_parser.png)
-```
+
 
 ---
 
