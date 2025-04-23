@@ -57,31 +57,34 @@ This script simplifies registry diff analysis by automatically filtering `regsho
 Customizable inside the script by editing the `KEYWORDS` list. Defaults include:
 
 ```
-# Persistence-related
-'Run', 'RunOnce', 'Startup', 'Start Menu', 'Shell Folders', 'StartupApproved',
-'TaskCache', 'TaskScheduler', 'Winlogon', 'Userinit', 'Load', 'Logon', 'Policies\\Explorer',
-
-# Network & Update
-'WindowsUpdate', 'Auto Update', 'Internet Settings', 'ProxyServer', 'WinInet', 'Winsock', 'Tcpip', 'Dhcp',
-
-# System Surveillance / TTPs
-'UserAssist', 'Explorer', 'SessionInfo', 'Shell', 'Action Center', 'RecentDocs', 'TypedURLs', 'AppCompatFlags',
-'MUICache', 'BackgroundActivityModerator', 'AppInit_DLLs',
-
-# Misc and Malware-specific
-'Services', 'App Paths', 'Debugger', 'Image File Execution Options', 'Command Processor',
-'SystemCertificates', 'Active Setup', 'KnownDLLs', 'PowerShell', 'WMI', 'AutorunsDisabled',
-
-# Monitoring Tools / Hijack Traces
-'Security Center', 'FirewallPolicy', 'SystemRestore', 'SafeBoot', 'BITS',
-'Software\\Classes\\exefile\\shell\\open\\command',
-
-# C2 & Traffic Indicators
-'ZoneMap', 'Internet Explorer', 'BrowserEmulation', 'FeatureControl',
-
-# Misc heuristic indicators
-'LoadBehavior', 'Enable', 'Disable', 'Hidden', 'NoDriveTypeAutoRun', 'NoAutoUpdate',
-
+KEYWORD_CATEGORIES = {
+"🔁 Persistence": [
+        'Run', 'RunOnce', 'Startup', 'Start Menu', 'Shell Folders', 'StartupApproved',
+        'TaskCache', 'TaskScheduler', 'Winlogon', 'Userinit', 'Load', 'Logon', 'Policies\\Explorer'
+    ],
+    "🌐 Network & Updates": [
+        'WindowsUpdate', 'Auto Update', 'Internet Settings', 'ProxyServer',
+        'WinInet', 'Winsock', 'Tcpip', 'Dhcp'
+    ],
+    "🕵️ Surveillance / TTPs": [
+        'UserAssist', 'Explorer', 'SessionInfo', 'Shell', 'Action Center', 'RecentDocs', 'TypedURLs',
+        'AppCompatFlags', 'MUICache', 'BackgroundActivityModerator', 'AppInit_DLLs'
+    ],
+    "🔒 Malware-Specific / System Config": [
+        'Services', 'App Paths', 'Debugger', 'Image File Execution Options', 'Command Processor',
+        'SystemCertificates', 'Active Setup', 'KnownDLLs', 'PowerShell', 'WMI', 'AutorunsDisabled'
+    ],
+    "🧩 Monitoring / Hijack Indicators": [
+        'Security Center', 'FirewallPolicy', 'SystemRestore', 'SafeBoot', 'BITS',
+        'Software\\Classes\\exefile\\shell\\open\\command'
+    ],
+    "🛰️ C2 & Traffic Indicators": [
+        'ZoneMap', 'Internet Explorer', 'BrowserEmulation', 'FeatureControl'
+    ],
+    "🧠 Heuristic Flags": [
+        'LoadBehavior', 'Enable', 'Disable', 'Hidden', 'NoDriveTypeAutoRun', 'NoAutoUpdate'
+    ]
+    }
 ```
 
 **How to Use:**
