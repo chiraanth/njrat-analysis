@@ -41,7 +41,7 @@ This repository contains a comprehensive malware analysis of a suspected njRAT s
   - Screenshots, decoded values, and conclusions.
 
 ---
-🛠️ **Automation Tool Overview: ** **`regshot_parser.py`**
+🛠️ **Automation Tool Overview:** **`regshot_parser.py`**
 
 This script simplifies registry diff analysis by automatically filtering `regshot.txt` output for malware-relevant indicators.
 
@@ -71,7 +71,8 @@ python regshot_parser.py
 
 **📸 Screenshot **
 Below is an example of what the filtered output looks like:
-data/regshot_parser.png
+![Filtered Output Preview](data/regshot_parser.png)
+
 
 ---
 
