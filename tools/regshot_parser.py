@@ -6,30 +6,30 @@ from tkinter import filedialog
 import webbrowser
 # === CONFIG ===
 KEYWORDS = [
-    # Persistence-related
-    'Run', 'RunOnce', 'Startup', 'Start Menu', 'Shell Folders', 'StartupApproved',
-    'TaskCache', 'TaskScheduler', 'Winlogon', 'Userinit', 'Load', 'Logon', 'Policies\\Explorer',
+# Persistence-related
+'Run', 'RunOnce', 'Startup', 'Start Menu', 'Shell Folders', 'StartupApproved',
+'TaskCache', 'TaskScheduler', 'Winlogon', 'Userinit', 'Load', 'Logon', 'Policies\\Explorer',
 
-    # Network & Update
-    'WindowsUpdate', 'Auto Update', 'Internet Settings', 'ProxyServer', 'WinInet', 'Winsock', 'Tcpip', 'Dhcp',
+# Network & Update
+'WindowsUpdate', 'Auto Update', 'Internet Settings', 'ProxyServer', 'WinInet', 'Winsock', 'Tcpip', 'Dhcp',
 
-    # System Surveillance / TTPs
-    'UserAssist', 'Explorer', 'SessionInfo', 'Shell', 'Action Center', 'RecentDocs', 'TypedURLs', 'AppCompatFlags',
-    'MUICache', 'BackgroundActivityModerator', 'AppInit_DLLs',
+# System Surveillance / TTPs
+'UserAssist', 'Explorer', 'SessionInfo', 'Shell', 'Action Center', 'RecentDocs', 'TypedURLs', 'AppCompatFlags',
+'MUICache', 'BackgroundActivityModerator', 'AppInit_DLLs',
 
-    # Misc and Malware-specific
-    'Services', 'App Paths', 'Debugger', 'Image File Execution Options', 'Command Processor',
-    'SystemCertificates', 'Active Setup', 'KnownDLLs', 'PowerShell', 'WMI', 'AutorunsDisabled',
+# Misc and Malware-specific
+'Services', 'App Paths', 'Debugger', 'Image File Execution Options', 'Command Processor',
+'SystemCertificates', 'Active Setup', 'KnownDLLs', 'PowerShell', 'WMI', 'AutorunsDisabled',
 
-    # Monitoring Tools / Hijack Traces
-    'Security Center', 'FirewallPolicy', 'SystemRestore', 'SafeBoot', 'BITS',
-    'Software\\Classes\\exefile\\shell\\open\\command',
+# Monitoring Tools / Hijack Traces
+'Security Center', 'FirewallPolicy', 'SystemRestore', 'SafeBoot', 'BITS',
+'Software\\Classes\\exefile\\shell\\open\\command',
 
-    # C2 & Traffic Indicators
-    'ZoneMap', 'Internet Explorer', 'BrowserEmulation', 'FeatureControl',
+# C2 & Traffic Indicators
+'ZoneMap', 'Internet Explorer', 'BrowserEmulation', 'FeatureControl',
 
-    # Misc heuristic indicators
-    'LoadBehavior', 'Enable', 'Disable', 'Hidden', 'NoDriveTypeAutoRun', 'NoAutoUpdate',
+# Misc heuristic indicators
+'LoadBehavior', 'Enable', 'Disable', 'Hidden', 'NoDriveTypeAutoRun', 'NoAutoUpdate',
 ]
 
 timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
