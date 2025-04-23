@@ -69,7 +69,8 @@ python regshot_parser.py
 
 📄 Output will be saved as `filtered_regshot_<timestamp>.html` and `filtered_regshot_<timestamp>.txt`
 
-**📸 Screenshot **
+**📸 Screenshot**
+
 Below is an example of what the filtered output looks like:
 ![Filtered Output Preview](data/regshot_parser.png)
 
